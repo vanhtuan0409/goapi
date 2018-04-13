@@ -1,0 +1,13 @@
+{
+  "name": "generator-yogoapi",
+  "version": "0.1.0",
+  "description": "A Yeoman generator for Go API",
+  "files": ["generators"],
+  "keywords": ["yeoman-generator"],
+  "repository": "https://github.com/vanhtuan0409/yo-goapi.git",
+  "author": "Tuấn Vương <vanhtuan0409@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^2.0.3"
+  }
+}
