@@ -8,7 +8,7 @@ module.exports = class GoAPIGenerator extends Generator {
 
   initializing() {
     this.rootUrl = this._getRepoUrl();
-    this.appName = "";
+    this.projectName = "";
   }
 
   prompting() {
@@ -28,7 +28,7 @@ module.exports = class GoAPIGenerator extends Generator {
         }
       }
     ]).then(answer => {
-      this.appName = answer.appName;
+      this.projectName = answer.appName;
     });
   }
 
@@ -37,7 +37,7 @@ module.exports = class GoAPIGenerator extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("_main.go"),
-      this.destinationPath(`./${this.appName}/main.go`)
+      this.destinationPath(`./${this.projectName}/main.go`)
     );
   }
 
