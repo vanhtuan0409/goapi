@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Tuan Vuong",
+      "authorEmail": "vanhtuan0409@gmail.com",
+      "authorUrl": "https://github.com/vanhtuan0409"
+    }
+  }
+}
