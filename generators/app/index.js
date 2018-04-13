@@ -9,6 +9,7 @@ module.exports = class GoAPIGenerator extends Generator {
   initializing() {
     this.rootUrl = this._getRepoUrl();
     this.projectName = "";
+    this.architecture = "";
   }
 
   prompting() {
@@ -26,9 +27,23 @@ module.exports = class GoAPIGenerator extends Generator {
           if (!input) return "Project name is required";
           return true;
         }
+      },
+      {
+        type: "list",
+        name: "architecture",
+        message: "Select architecture type:",
+        default: "clean",
+        choices: [
+          {
+            name: "Clean Architecture",
+            value: "clean",
+            checked: true
+          }
+        ]
       }
     ]).then(answer => {
       this.projectName = answer.appName;
+      this.architecture = answer.architecture;
     });
   }
 
