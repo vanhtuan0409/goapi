@@ -35,7 +35,17 @@ module.exports = class GoAPIGenerator extends Generator {
   writing() {
     if (this.rootUrl == "") return;
 
-    this.fs.copy(this.templatePath("*.go"), this._extendProjectPath());
+    this.fs.copyTpl(
+      this.templatePath("**/*"),
+      this._extendProjectPath(),
+      {
+        projectName: this.projectName
+      },
+      null,
+      {
+        globOptions: { dot: true }
+      }
+    );
   }
 
   _getRepoUrl() {
